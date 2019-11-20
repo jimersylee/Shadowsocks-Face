@@ -4,6 +4,7 @@
 #include "pch.hpp"
 #include "manager/configmanager.h"
 #include "manager/processmanager.h"
+#include "version.h"
 
 namespace Ui {
 class MainWindow;

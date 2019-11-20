@@ -28,7 +28,8 @@ HEADERS += \
     src/ui/sharedialog.h \
     src/ui/imagewidget.h \
     src/qrlib/qrcode.h \
-    src/qrlib/qreasy.h
+    src/qrlib/qreasy.h \
+    src/version.h
 
 INCLUDEPATH += \
     src/

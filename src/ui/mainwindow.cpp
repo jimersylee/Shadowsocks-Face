@@ -167,10 +167,11 @@ void MainWindow::onDisconnect() {
 void MainWindow::onManually() {
     Config toAdd;
     EditDialog editDialog(toAdd, this);
-    editDialog.exec();
-    configManager->add(toAdd);
-    configData.append(toAdd);
-    sync();
+    if (editDialog.exec() == QDialog::Accepted) {
+        configManager->add(toAdd);
+        configData.append(toAdd);
+        sync();
+    }
 }
 
 void MainWindow::onPaste() {
@@ -214,10 +215,11 @@ void MainWindow::onPaste() {
     toAdd.remarks = name;
 
     EditDialog editDialog(toAdd, this);
-    editDialog.exec();
-    configManager->add(toAdd);
-    configData.append(toAdd);
-    sync();
+    if (editDialog.exec() == QDialog::Accepted) {
+        configManager->add(toAdd);
+        configData.append(toAdd);
+        sync();
+    }
 }
 
 void MainWindow::onEdit() {
@@ -225,9 +227,10 @@ void MainWindow::onEdit() {
     Config &toEdit = configData[row];
     if (!processManager->isRunning(toEdit.id)) {
         EditDialog editDialog(toEdit, this);
-        editDialog.exec();
-        configManager->edit(toEdit);
-        sync();
+        if (editDialog.exec() == QDialog::Accepted) {
+            configManager->edit(toEdit);
+            sync();
+        }
     }
 }
 
@@ -245,7 +248,6 @@ void MainWindow::onRemove() {
         configData.removeAt(row);
         sync();
     }
-
 }
 
 void MainWindow::onRefresh() {
@@ -285,6 +287,7 @@ void MainWindow::onExport() {
 void MainWindow::onAbout() {
     QString content{tr(
                         "<h1>Shadowsocks Face</h1>"
+                        "<b>Version %1</b>"
                         "<p>A light weight <a href='https://github.com/shadowsocks/shadowsocks-libev'>"
                         "shadowsocks-libev</a> GUI wrapper</p>"
 
@@ -293,7 +296,7 @@ void MainWindow::onAbout() {
                         "Shadowsocks-Qt5</a> project<br/>"
                         "Use <a href='https://github.com/ricmoo/QRCode'>ricmoo/QRCode</a> "
                         "(<a href='https://opensource.org/licenses/MIT'>MIT</a>) to generate QR Code</p>"
-                    )};
+                    ).arg(VERSION)};
     QMessageBox::about(this, tr("About"), content);
 }
 
