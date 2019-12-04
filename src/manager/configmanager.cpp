@@ -60,7 +60,7 @@ void ConfigManager::importGUIConfig(QString guiConfigPath) {
 
     for (auto i : jsonConfigs) {
         Config toAdd = Config::fromJsonObject(i.toObject());
-        toAdd.local_port=localPort;
+        toAdd.local_port = localPort;
         if (shareOverLan)
             toAdd.local_address = "0.0.0.0";
         add(toAdd);
@@ -69,13 +69,13 @@ void ConfigManager::importGUIConfig(QString guiConfigPath) {
 
 void ConfigManager::exportGUIConfig(QString guiConfigPath) {
     QJsonArray jsonConfigs;
-    for (const auto &i:query()) {
+    for (const auto &i : query()) {
         QJsonObject oneConfig;
-        oneConfig["method"]=i.method;
-        oneConfig["password"]=i.password;
-        oneConfig["server"]=i.server;
-        oneConfig["server_port"]=i.server_port;
-        oneConfig["remarks"]=i.remarks;
+        oneConfig["method"] = i.method;
+        oneConfig["password"] = i.password;
+        oneConfig["server"] = i.server;
+        oneConfig["server_port"] = i.server_port;
+        oneConfig["remarks"] = i.remarks;
         jsonConfigs.push_back(oneConfig);
     }
 

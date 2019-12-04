@@ -1,5 +1,11 @@
 #include "config.h"
 
+QString Config::getName() const {
+    if (remarks.trimmed().isEmpty())
+        return QString("%1:%2").arg(server).arg(server_port);
+    else return remarks;
+}
+
 QJsonObject Config::toJsonObject() const {
     QJsonObject ret;
     ret["id"] = id;
@@ -30,6 +36,14 @@ Config Config::fromJsonObject(const QJsonObject &json) {
     if (json.contains("fastopen")) ret.fastopen = json["fastopen"].toBool();
     if (json.contains("mode")) ret.mode = json["mode"].toString();
     return ret;
+}
+
+QString Config::toUri() const {
+    QString userInfo = QString("%1:%2").arg(method).arg(password).toUtf8().toBase64();
+    QString res = QString("ss://%1@%2:%3").arg(userInfo).arg(server).arg(server_port);
+    if (!remarks.trimmed().isEmpty())
+        res += "#" + remarks.toUtf8().toPercentEncoding();
+    return res;
 }
 
 QString Config::fileName() const {

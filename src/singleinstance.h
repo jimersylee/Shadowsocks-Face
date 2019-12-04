@@ -1,7 +1,7 @@
 #ifndef SINGLEINSTANCE_H
 #define SINGLEINSTANCE_H
 
-#include <QObject>
+#include "pch.hpp"
 
 class SingleInstance: public QObject {
     Q_OBJECT

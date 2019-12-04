@@ -18,9 +18,17 @@ public:
     bool fastopen = false;
     QString mode = "tcp_only";
 
+    // latency:
+    //   -1: no test
+    //   -2: time out
+    //   Positive number: latency in ms
+    int latencyMs = -1;
+
     // method
+    QString getName() const;
     QJsonObject toJsonObject() const;
     static Config fromJsonObject(const QJsonObject &json);
+    QString toUri() const;
     QString fileName() const;
 };
 

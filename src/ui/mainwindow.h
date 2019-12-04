@@ -27,7 +27,8 @@ private:
     void setRow(int row, bool bold);
     QSystemTrayIcon systray;
     bool hideFirst = false;
-    bool startConfig(const Config &config);
+    void startConfig(Config &config); // update latency
+    void testLatency(Config &config);
     QList<Config> configData;
 
 private slots:
@@ -48,6 +49,7 @@ private slots:
     void onRemove();
     void onRefresh();
     void onActivate();
+    void onTestLatency();
 
 protected slots:
     void closeEvent(QCloseEvent *e);

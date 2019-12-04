@@ -1,9 +1,5 @@
 #include "singleinstance.h"
 
-#include <QLocalSocket>
-#include <QLocalServer>
-#include <QFile>
-
 bool SingleInstance::runGuard() {
     QLocalSocket socket;
     socket.connectToServer(_key);
