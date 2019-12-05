@@ -300,8 +300,8 @@
     </message>
     <message>
         <location filename="../../ui/mainwindow.cpp" line="224"/>
-        <source>Port &apos;%1&apos; already used by config &apos;%2&apos;, kill it?</source>
-        <translation>端口 &apos;%1&apos; 已经被 &apos;%2&apos; 占用，结束该进程？</translation>
+        <source>Port %1 already used by config &apos;%2&apos;, kill it?</source>
+        <translation>%1 端口已经被 &apos;%2&apos; 占用，结束该进程？</translation>
     </message>
     <message>
         <location filename="../../ui/mainwindow.cpp" line="322"/>

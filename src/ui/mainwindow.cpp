@@ -221,7 +221,7 @@ void MainWindow::onConnect()
             if (QMessageBox::question(
                     this,
                     tr("Port repeat"),
-                    tr("Port '%1' already used by config '%2', kill it?").arg(i.local_port).arg(i.getName()),
+                    tr("Port %1 already used by config '%2', kill it?").arg(i.local_port).arg(i.getName()),
                     QMessageBox::StandardButtons(QMessageBox::Yes | QMessageBox::No),
                     QMessageBox::Yes
                 ) == QMessageBox::Yes) {
