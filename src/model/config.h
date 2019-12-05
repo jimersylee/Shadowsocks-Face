@@ -2,8 +2,10 @@
 #define CONFIG_H
 
 #include "pch.hpp"
+#include "net/latencytester.h"
 
-class Config {
+class Config
+{
 public:
     // data
     int id = 0;
@@ -17,12 +19,7 @@ public:
     QString method;
     bool fastopen = false;
     QString mode = "tcp_only";
-
-    // latency:
-    //   -1: no test
-    //   -2: time out
-    //   Positive number: latency in ms
-    int latencyMs = -1;
+    int latencyMs = NOTEST;
 
     // method
     QString getName() const;

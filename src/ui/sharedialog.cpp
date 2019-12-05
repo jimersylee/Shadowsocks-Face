@@ -3,7 +3,9 @@
 
 #include "qrlib/qreasy.h"
 
-ShareDialog::ShareDialog(const Config &config, QWidget *parent): QDialog(parent), ui(new Ui::ShareDialog) {
+ShareDialog::ShareDialog(const Config &config, QWidget *parent)
+    : QDialog(parent), ui(new Ui::ShareDialog)
+{
     ui->setupUi(this);
     setWindowTitle(tr("Share '%1'").arg(config.remarks));
     ui->textBrowser->setWordWrapMode(QTextOption::WrapAnywhere);
@@ -22,6 +24,7 @@ ShareDialog::ShareDialog(const Config &config, QWidget *parent): QDialog(parent)
     ui->imageWidget->setImage(qrImage);
 }
 
-ShareDialog::~ShareDialog() {
+ShareDialog::~ShareDialog()
+{
     delete ui;
 }

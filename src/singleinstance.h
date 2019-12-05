@@ -3,7 +3,8 @@
 
 #include "pch.hpp"
 
-class SingleInstance: public QObject {
+class SingleInstance: public QObject
+{
     Q_OBJECT
 public:
     explicit SingleInstance(QString key, QObject *parent = nullptr): QObject(parent), _key(key) {}

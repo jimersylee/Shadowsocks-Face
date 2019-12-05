@@ -1,7 +1,9 @@
 #include "editdialog.h"
 #include "ui_editdialog.h"
 
-EditDialog::EditDialog(Config &config, QWidget *parent): QDialog(parent), ui(new Ui::EditDialog), config(config) {
+EditDialog::EditDialog(Config &config, QWidget *parent)
+    : QDialog(parent), ui(new Ui::EditDialog), config(config)
+{
     ui->setupUi(this);
 
     if (config.id == 0) setWindowTitle(tr("New"));
@@ -21,11 +23,13 @@ EditDialog::EditDialog(Config &config, QWidget *parent): QDialog(parent), ui(new
     connect(ui->buttonBox, &QDialogButtonBox::accepted, this, &EditDialog::onSave);
 }
 
-EditDialog::~EditDialog() {
+EditDialog::~EditDialog()
+{
     delete ui;
 }
 
-void EditDialog::onSave() {
+void EditDialog::onSave()
+{
     bool valid = true;
     if (ui->lineEdit_name->text().size() == 0) {
         ui->lineEdit_name->setStyleSheet("background-color: pink");

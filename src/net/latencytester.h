@@ -3,7 +3,11 @@
 
 #include "pch.hpp"
 
-class LatencyTester : public QObject {
+#define NOTEST -1
+#define TIMEOUT -2
+
+class LatencyTester : public QObject
+{
     Q_OBJECT
 
 public:
@@ -20,8 +24,10 @@ private:
     QNetworkProxy proxy;
     QNetworkAccessManager net;
     QElapsedTimer timer;
-    int count = 5;
+    int retest = 5;
     QList<int> statistics;
+    int timeoutSec = 10;
+    QTimer watchdog;
 };
 
 #endif // LATENCYTESTER_H

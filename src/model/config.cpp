@@ -1,12 +1,14 @@
 #include "config.h"
 
-QString Config::getName() const {
+QString Config::getName() const
+{
     if (remarks.trimmed().isEmpty())
         return QString("%1:%2").arg(server).arg(server_port);
     else return remarks;
 }
 
-QJsonObject Config::toJsonObject() const {
+QJsonObject Config::toJsonObject() const
+{
     QJsonObject ret;
     ret["id"] = id;
     ret["remarks"] = remarks;
@@ -22,7 +24,8 @@ QJsonObject Config::toJsonObject() const {
     return ret;
 }
 
-Config Config::fromJsonObject(const QJsonObject &json) {
+Config Config::fromJsonObject(const QJsonObject &json)
+{
     Config ret;
     if (json.contains("id")) ret.id = json["id"].toInt();
     ret.remarks = json["remarks"].toString();
@@ -38,7 +41,8 @@ Config Config::fromJsonObject(const QJsonObject &json) {
     return ret;
 }
 
-QString Config::toUri() const {
+QString Config::toUri() const
+{
     QString userInfo = QString("%1:%2").arg(method).arg(password).toUtf8().toBase64();
     QString res = QString("ss://%1@%2:%3").arg(userInfo).arg(server).arg(server_port);
     if (!remarks.trimmed().isEmpty())
@@ -46,6 +50,7 @@ QString Config::toUri() const {
     return res;
 }
 
-QString Config::fileName() const {
+QString Config::fileName() const
+{
     return QString("%1.json").arg(id);
 }

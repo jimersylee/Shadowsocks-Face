@@ -1,6 +1,7 @@
 #include "singleinstance.h"
 
-bool SingleInstance::runGuard() {
+bool SingleInstance::runGuard()
+{
     QLocalSocket socket;
     socket.connectToServer(_key);
     if (socket.waitForConnected(500))
