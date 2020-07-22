@@ -1,7 +1,7 @@
 #include "sharedialog.h"
 #include "ui_sharedialog.h"
 
-#include "qrlib/qreasy.h"
+#include "tools/qreasy.h"
 
 ShareDialog::ShareDialog(const Config &config, QWidget *parent)
     : QDialog(parent), ui(new Ui::ShareDialog)

@@ -2,10 +2,10 @@
 #include "ui_mainwindow.h"
 
 #include "editdialog.h"
-#include "singleinstance.h"
+#include "tools/singleinstance.h"
 #include "sharedialog.h"
 
-#include "net/latencytester.h"
+#include "tools/latencytester.h"
 
 #ifdef Q_OS_WIN
 static QString dirPath = QDir::homePath() + "\\AppData\\Local\\ss-face";
@@ -381,7 +381,7 @@ void MainWindow::onAbout()
                         "Shadowsocks-Qt5</a> project<br/>"
                         "Use <a href='https://github.com/ricmoo/QRCode'>ricmoo/QRCode</a> "
                         "(<a href='https://opensource.org/licenses/MIT'>MIT</a>) to generate QR Code</p>"
-                    ).arg(VERSION)};
+                    ).arg(QString::fromStdString(version))};
     QMessageBox::about(this, tr("About"), content);
 }
 

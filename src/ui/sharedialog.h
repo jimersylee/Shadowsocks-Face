@@ -1,8 +1,8 @@
 #ifndef SHAREDIALOG_H
 #define SHAREDIALOG_H
 
-#include "pch.hpp"
-#include "model/config.h"
+#include "common.hpp"
+#include "entity/config.h"
 
 namespace Ui
 {

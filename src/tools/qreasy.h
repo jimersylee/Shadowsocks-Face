@@ -1,10 +1,8 @@
 #ifndef QREASY_H
 #define QREASY_H
 
-#include "qrcode.h"
-#include <algorithm>
-#include <iterator>
-#include <cstring>
+#include "common.hpp"
+#include "third_party/qr/qrcode.h"
 
 class QrEasy {
 public:
@@ -19,7 +17,7 @@ public:
         ret.qr = new QRCode();
 
         static int a[] = {0, 0, 0, 53, 78, 106, 134, 154, 192, 230, 271, 321, 367, 425, 458, 520, 586, 644, 718, 792, 858, 929, 1003, 1091, 1171, 1273, 1367, 1465, 1528, 1628, 1732, 1840, 1952, 2068, 2188, 2303, 2431, 2563, 2699, 2809, 2953};
-        int version = std::upper_bound(std::begin(a), std::end(a), std::strlen(data)) - std::begin(a);
+        int version = std::upper_bound(std::begin(a), std::end(a), strlen(data)) - std::begin(a);
         if (version > 40)
             throw std::runtime_error("data too long");
         ret.qrdata = new uint8_t[qrcode_getBufferSize(version)];

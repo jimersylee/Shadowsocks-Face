@@ -1,4 +1,4 @@
-#include "pch.hpp"
+#include "common.hpp"
 #include "ui/mainwindow.h"
 
 int main(int argc, char *argv[])
