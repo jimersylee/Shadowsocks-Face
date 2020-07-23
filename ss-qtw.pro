@@ -9,7 +9,7 @@ PRECOMPILED_HEADER = src/common.hpp
 
 SOURCES += \
     src/data/configmanager.cpp \
-    src/entity/config.cpp \
+    src/model/config.cpp \
     src/app/global.cpp \
     src/app/main.cpp \
     src/sspm/processmanager.cpp \
@@ -23,7 +23,7 @@ SOURCES += \
 
 HEADERS += \
     src/data/configmanager.h \
-    src/entity/config.h \
+    src/model/config.h \
     src/app/global.h \
     src/app/version.h \
     src/sspm/processmanager.h \

@@ -2,7 +2,7 @@
 #define SHAREDIALOG_H
 
 #include "common.hpp"
-#include "entity/config.h"
+#include "model/config.h"
 
 namespace Ui
 {

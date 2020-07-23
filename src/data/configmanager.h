@@ -2,7 +2,7 @@
 #define SSCONFIGSTORAGE_H
 
 #include "common.hpp"
-#include "entity/config.h"
+#include "model/config.h"
 
 class ConfigManager: public QObject
 {
