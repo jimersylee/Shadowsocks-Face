@@ -10,9 +10,6 @@
     <height>550</height>
    </rect>
   </property>
-  <property name="windowTitle">
-   <string>Shadowsocks Face</string>
-  </property>
   <property name="windowIcon">
    <iconset resource="../../res/res.qrc">
     <normaloff>:/icon/this</normaloff>:/icon/this</iconset>

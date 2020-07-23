@@ -10,11 +10,12 @@ PRECOMPILED_HEADER = src/common.hpp
 SOURCES += \
     src/data/configmanager.cpp \
     src/entity/config.cpp \
-    src/ss-qtw/global.cpp \
-    src/ss-qtw/main.cpp \
+    src/app/global.cpp \
+    src/app/main.cpp \
     src/sspm/processmanager.cpp \
-    src/third_party/qr/qrcode.c \
+    src/third_party/qrcode/src/qrcode.c \
     src/tools/latencytester.cpp \
+    src/tools/qreasy.cpp \
     src/tools/singleinstance.cpp \
     src/ui/editdialog.cpp \
     src/ui/mainwindow.cpp \
@@ -23,15 +24,15 @@ SOURCES += \
 HEADERS += \
     src/data/configmanager.h \
     src/entity/config.h \
-    src/ss-qtw/global.h \
-    src/ss-qtw/version.h \
+    src/app/global.h \
+    src/app/version.h \
     src/sspm/processmanager.h \
-    src/third_party/qr/qrcode.h \
+    src/third_party/qrcode/src/qrcode.h \
     src/tools/qreasy.h \
     src/tools/latencytester.h \
     src/tools/singleinstance.h \
     src/ui/editdialog.h \
-    src/ui/imagewidget.h \
+    src/ui/custom/imagewidget.h \
     src/ui/mainwindow.h \
     src/ui/sharedialog.h
 

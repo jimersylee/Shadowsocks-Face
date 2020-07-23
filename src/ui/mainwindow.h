@@ -4,7 +4,7 @@
 #include "common.hpp"
 #include "data/configmanager.h"
 #include "sspm/processmanager.h"
-#include "ss-qtw/global.h"
+#include "app/global.h"
 
 namespace Ui
 {

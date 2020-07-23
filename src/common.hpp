@@ -18,6 +18,7 @@
 #include <QCloseEvent>
 #include <QDateTime>
 #include <QFileDialog>
+#include <QtGlobal>
 #include <QJsonArray>
 #include <QJsonDocument>
 #include <QJsonObject>
